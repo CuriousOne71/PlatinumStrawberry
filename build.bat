@@ -8,7 +8,7 @@ set msbuilddir="C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\
 rem set project=PlatinumStrawberry.csproj
 set project=PlatinumStrawberry.sln
 
-set celestedir=C:\celeste
+set celestedir="C:\Program Files (x86)\Steam\steamapps\common\Celeste\Mods\PlatinumStrawberry"
 set outputdir=.\bin\Debug\net46
 
 IF "%1" == "" GOTO start
@@ -22,4 +22,7 @@ rem %WINDIR%\Microsoft.NET\Framework\v3.5\msbuild.exe build.proj @"%propfile%" /
 %msbuilddir%\msbuild.exe %project%
 
 rem and now lets zip the output
+
 xcopy %outputdir%\*.* %celestedir% /E/H/C/I
+
+rem Paul was here
