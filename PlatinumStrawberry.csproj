@@ -62,6 +62,12 @@
     <None Update="everest.yaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Graphics\Atlases\Gameplay\objects\platinumblock\block.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\objects\platinumblock\icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Loenn\HiddenStrawberry.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
