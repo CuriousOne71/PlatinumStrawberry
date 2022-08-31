@@ -23,4 +23,4 @@ rem %WINDIR%\Microsoft.NET\Framework\v3.5\msbuild.exe build.proj @"%propfile%" /
 
 rem and now lets zip the output
 
-xcopy %outputdir%\*.* %celestedir% /E/H/C/T
+xcopy %outputdir%\*.* %celestedir% /E/H/C/I
