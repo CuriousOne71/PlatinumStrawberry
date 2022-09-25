@@ -67,7 +67,16 @@
     <None Update="Graphics\Atlases\Gameplay\objects\platinumblock\icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Loenn\entities\HiddenStrawberry.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Loenn\HiddenStrawberry.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Loenn\lang\en_gb.lang">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Loenn\triggers\PlatBerryCollectTrigger.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
