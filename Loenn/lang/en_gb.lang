@@ -1,0 +1,11 @@
+mods.PlatinumStrawberry.name=Platinum Strawberry Asset Pack
+
+# Entities
+
+# Hidden Strawberry
+entities.PlatinumStrawberry/HiddenStrawberry.placements.name.default=Hidden Strawberry
+
+# Triggers
+
+# Platinum Strawberry Collect Trigger
+triggers.PlatinumStrawberry/PlatBerryCollectTrigger.placements.name.default=Platinum Strawberry Collect Trigger

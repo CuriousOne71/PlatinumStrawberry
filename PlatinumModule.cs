@@ -12,27 +12,25 @@ using System.Threading.Tasks;
 
 namespace Celeste.Mod.PlatinumStrawberry
 {
-    public class PlatinumStrawberryModule : EverestModule
+    public class PlatinumModule : EverestModule
     {
-        private static PlatinumStrawberryModule _instance = null;
+        private static PlatinumModule? _instance = null;
 
-        public PlatinumStrawberryModule()
+        public PlatinumModule()
         {
             if (_instance == null)
             {
                 _instance = this;
-                //Logger.Log(LogLevel.Error, "PlatinumStrawberry", "Initialize PlatinumStrawberryModule via Constructor");
             }
         }
 
-        public static PlatinumStrawberryModule Instance 
+        public static PlatinumModule Instance 
         {
             get 
             {
                 if (_instance == null)
                 {
-                    _instance = new PlatinumStrawberryModule();
-                    //Logger.Log(LogLevel.Error, "PlatinumStrawberry", "Initialize PlatinumStrawberryModule via Instance getter");
+                    _instance = new PlatinumModule();
                 }
                 return _instance;
             }
@@ -40,20 +38,16 @@ namespace Celeste.Mod.PlatinumStrawberry
 
         public override void Load()
         {
-            //throw new NotImplementedException();
         }
 
         public override void Unload()
         {
-            //throw new NotImplementedException();
         }
 
-        // Optional, initialize anything after Celeste has initialized itself properly.
         public override void Initialize()
         {
         }
 
-        // Optional, do anything requiring either the Celeste or mod content here.
         public override void LoadContent(bool firstLoad)
         {
         }
