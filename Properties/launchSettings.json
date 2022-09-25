@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PlatinumStrawberry": {
+      "commandName": "Project",
+      "remoteDebugEnabled": false
+    }
+  }
+}

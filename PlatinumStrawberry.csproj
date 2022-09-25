@@ -11,6 +11,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <ProjectGuid>{63EDD791-15EA-4088-A67A-5757ABD990BA}</ProjectGuid>
     <AssemblyName>PlatinumStrawberry</AssemblyName>
+    <RootNamespace>Celeste.Mod.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -38,6 +39,24 @@
     <Reference Include="MMHOOK_Celeste">
       <HintPath>libs\MMHOOK_Celeste.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>libs\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb">
+      <HintPath>libs\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>libs\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks">
+      <HintPath>libs\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour">
+      <HintPath>libs\MonoMod.RuntimeDetour.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>libs\MonoMod.Utils.dll</HintPath>
     </Reference>
     <Reference Include="YamlDotNet">
       <HintPath>libs\YamlDotNet.dll</HintPath>

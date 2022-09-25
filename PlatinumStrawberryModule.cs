@@ -15,6 +15,7 @@ namespace Celeste.Mod.PlatinumStrawberry
     public class PlatinumStrawberryModule : EverestModule
     {
         private static PlatinumStrawberryModule _instance = null;
+        private bool ilTest0 = false;
 
         public PlatinumStrawberryModule()
         {
@@ -23,6 +24,10 @@ namespace Celeste.Mod.PlatinumStrawberry
                 _instance = this;
                 //Logger.Log(LogLevel.Error, "PlatinumStrawberry", "Initialize PlatinumStrawberryModule via Constructor");
             }
+
+            ilTest0 = false;
+            bool ilTest1 = true;
+            Logger.Log(LogLevel.Error, "PlatinumStrawberry", ilTest0.ToString() + " " + ilTest1.ToString());
         }
 
         public static PlatinumStrawberryModule Instance 
@@ -40,11 +45,13 @@ namespace Celeste.Mod.PlatinumStrawberry
 
         public override void Load()
         {
+            StrawberryILInjector.Load();
             //throw new NotImplementedException();
         }
 
         public override void Unload()
         {
+            StrawberryILInjector.Unload();
             //throw new NotImplementedException();
         }
 
