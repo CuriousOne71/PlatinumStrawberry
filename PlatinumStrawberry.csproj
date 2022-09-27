@@ -39,7 +39,6 @@
 
   <ItemGroup>
     <Folder Include="Ahorn\" />
-    <Folder Include="Graphics\" />
     <Folder Include="Dialog\" />
   </ItemGroup>
 
@@ -53,7 +52,7 @@
     <None Update="everest.yaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\idle_00.png">
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\idle00.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\objects\platinumblock\block.png">
@@ -63,6 +62,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Loenn\entities\HiddenStrawberry.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Loenn\entities\PlatinumBlock.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
 	<None Update="Loenn\entities\PlatinumStrawberry.lua">

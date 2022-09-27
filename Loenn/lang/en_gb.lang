@@ -8,3 +8,6 @@ entities.PlatinumStrawberry/PlatinumStrawberry.placements.name.default=Platinum 
 
 # Platinum Strawberry Collect Trigger
 triggers.PlatinumStrawberry/PlatBerryCollectTrigger.placements.name.default=Platinum Berry Collection
+
+# Platinum Block
+entities.PlatinumStrawberry/PlatinumBlock.placements.name.default=Platinum Block
