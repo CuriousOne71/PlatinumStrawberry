@@ -54,8 +54,8 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
         {
             base.Added(scene);
             Add(sprite);
-            if (!isGhostBerry) sprite.Play("normal");
-            else sprite.Play("ghost");
+            if (!isGhostBerry) sprite.Play("idlePlat");
+            else sprite.Play("idleGhost");
             sprite.OnFrameChange = OnAnimate;
             Add(wiggler);
             Add(rotateWiggler);
@@ -181,7 +181,8 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
             if (isGhostBerry) num = 1;
             Audio.Play("event:/game/general/strawberry_get", Position, "colour", num, "count", collectIndex);
             Input.Rumble(RumbleStrength.Medium, RumbleLength.Medium);
-            sprite.Play("collect");
+            if (num == 1) sprite.Play("collectGhost");
+            else sprite.Play("collectPlat");
             while (sprite.Animating) yield return null;
             Scene.Add(new StrawberryPoints(Position, isGhostBerry, collectIndex, false));
             RemoveSelf();
