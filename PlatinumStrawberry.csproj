@@ -52,7 +52,319 @@
     <None Update="everest.yaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost00.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost01.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost02.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost03.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost04.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost05.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost06.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost07.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost08.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost09.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost10.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost11.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost12.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost13.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost14.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost15.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost17.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost19.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost20.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost21.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost22.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost23.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost25.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost26.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost27.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost28.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost29.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost30.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost31.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost33.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost34.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost35.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost37.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost38.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost39.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost40.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost41.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost42.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost43.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost44.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost45.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost46.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost47.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost49.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost50.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\ghost51.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\idle00.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal00.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal01.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal02.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal03.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal04.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal05.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal06.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal07.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal08.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal09.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal10.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal11.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal12.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal13.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal14.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal15.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal17.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal19.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal20.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal21.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal22.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal23.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal25.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal26.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal27.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal28.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal29.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal30.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal31.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal33.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal34.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal35.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal37.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal38.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal39.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal40.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal41.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal42.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal43.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal44.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal45.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal46.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal47.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal49.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal50.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal51.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\objects\platinumblock\block.png">

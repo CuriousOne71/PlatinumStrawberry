@@ -8,13 +8,13 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
     [Tracked(false)]
     class PlatinumBlock : GoldenBlock
     {
-        //private float startY;
-        //private Image berry;
-        //private MTexture[,] nineSlice;
+        private float startY;
+        private Image berry;
+        private MTexture[,] nineSlice;
 
         public PlatinumBlock(Vector2 offset, float width, float height) : base(offset, width, height)
         {
-            /*startY = base.Y;
+            startY = base.Y;
             berry = new Image(GFX.Game["SyrenyxPlatinumStrawberry/objects/platinumblock/icon"]);
             berry.CenterOrigin();
             berry.Position = new Vector2(width / 2f, height / 2f);
@@ -30,10 +30,12 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
             base.Depth = -10000;
             Add(new LightOcclude());
             Add(new MirrorSurface());
-            SurfaceSoundIndex = 32;*/
+            SurfaceSoundIndex = 32;
         }
 
-        /*public override void Awake(Scene scene)
+        public PlatinumBlock(EntityData data, Vector2 offset) : this(data.Position + offset, data.Width, data.Height) { }
+
+        public override void Awake(Scene scene)
         {
             base.Awake(scene);
             bool platFollower = false;
@@ -49,6 +51,6 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
             {
                 RemoveSelf();
             }
-        }*/
+        }
     }
 }
