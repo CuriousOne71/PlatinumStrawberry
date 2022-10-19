@@ -1,8 +1,11 @@
 ﻿using Celeste.Mod.Entities;
+using Celeste.Mod.PlatinumStrawberry.Triggers;
+using Celeste;
 using Microsoft.Xna.Framework;
 using Monocle;
 using System;
 using System.Collections;
+using System.Reflection;
 
 namespace Celeste.Mod.PlatinumStrawberry.Entities
 {
@@ -18,60 +21,63 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
         public static ParticleType P_GhostGlow = Strawberry.P_GhostGlow;
         public Follower Follower;
 
-        private Sprite sprite;
-        private Wiggler wiggler;
-        private Wiggler rotateWiggler;
-        private BloomPoint bloom;
-        private VertexLight light;
-        private Tween lightTween;
-        private Vector2 start;
-        private float wobble = 0f;
-        private float collectTimer = 0f;
-        private bool collected;
-        private bool isGhostBerry;
-        private static SpriteBank spriteBank;
+        private Sprite _sprite;
+        private Wiggler _wiggler;
+        private Wiggler _rotateWiggler;
+        private BloomPoint _bloom;
+        private VertexLight _light;
+        private Tween _lightTween;
+        private Vector2 _start;
+        private float _wobble = 0f;
+        private float _collectTimer = 0f;
+        private bool _collected;
+        private bool _isGhostBerry;
+
+        private Strawberry strawberry;
 
         public PlatinumStrawberry(EntityData data, Vector2 offset, EntityID gid)
         {
+            strawberry = new Strawberry(data, offset, gid);
             ID = gid;
-            Position = (start = data.Position + offset);
-            isGhostBerry = SaveData.Instance.CheckStrawberry(ID);
+            Position = (_start = data.Position + offset);
+            _isGhostBerry = SaveData.Instance.CheckStrawberry(ID);
             base.Depth = -100;
             base.Collider = new Hitbox(14f, 14f, -7f, -7f);
             Add(new PlayerCollider(OnPlayer));
             Add(new MirrorReflection());
             Add(Follower = new Follower(ID, null, OnLoseLeader));
             Follower.FollowDelay = 0.3f;
-            sprite = spriteBank.Create("platinumberry");
-            wiggler = Wiggler.Create(0.4f, 4f, delegate (float v) { sprite.Scale = Vector2.One * (1f + v * 0.35f); });
-            rotateWiggler = Wiggler.Create(0.5f, 4f, delegate (float v) { sprite.Rotation = v * 30f * ((float)Math.PI / 180f); });
-            bloom = new BloomPoint(0.5f, 12f);
-            light = new VertexLight(Color.White, 1f, 16, 24);
-            lightTween = light.CreatePulseTween();
+            _sprite = GFX.SpriteBank.Create("moonberry");
+            _wiggler = Wiggler.Create(0.4f, 4f, delegate (float v) { _sprite.Scale = Vector2.One * (1f + v * 0.35f); });
+            _rotateWiggler = Wiggler.Create(0.5f, 4f, delegate (float v) { _sprite.Rotation = v * 30f * ((float)Math.PI / 180f); });
+            _bloom = new BloomPoint(0.5f, 12f);
+            _light = new VertexLight(Color.White, 1f, 16, 24);
+            _lightTween = _light.CreatePulseTween();
         }
 
         public override void Added(Scene scene)
         {
             base.Added(scene);
-            Add(sprite);
-            if (!isGhostBerry) sprite.Play("idlePlat");
-            else sprite.Play("idleGhost");
-            sprite.OnFrameChange = OnAnimate;
-            Add(wiggler);
-            Add(rotateWiggler);
-            Add(bloom);
-            Add(light);
-            Add(lightTween);
+            Add(_sprite);
+            _sprite.Play("idle");
+            //if (!isGhostBerry) sprite.Play("idlePlat");
+            //else sprite.Play("idleGhost");
+            _sprite.OnFrameChange = OnAnimate;
+            Add(_wiggler);
+            Add(_rotateWiggler);
+            Add(_bloom);
+            Add(_light);
+            Add(_lightTween);
         }
 
         public override void Update()
         {
-            if (!collected)
+            if (!_collected)
             {
-                wobble += Engine.DeltaTime * 4f;
-                Sprite obj = sprite;
-                BloomPoint bloomPoint = bloom;
-                float num2 = (light.Y = (float)Math.Sin(wobble) * 2f);
+                _wobble += Engine.DeltaTime * 4f;
+                Sprite obj = _sprite;
+                BloomPoint bloomPoint = _bloom;
+                float num2 = (_light.Y = (float)Math.Sin(_wobble) * 2f);
                 float num5 = (obj.Y = (bloomPoint.Y = num2));
                 int followIndex = Follower.FollowIndex;
                 if (Follower.Leader != null && Follower.DelayTimer <= 0f && StrawberryRegistry.IsFirstStrawberry(this))
@@ -79,30 +85,30 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
                     Player player = Follower.Leader.Entity as Player;
                     if (player != null && player.Scene != null && !player.StrawberriesBlocked)
                     {
-                        if (player.CollideCheck<GoldBerryCollectTrigger>() || ((Level)base.Scene).Completed)
+                        if (player.CollideCheck<PlatBerryCollectTrigger>() || ((Level)base.Scene).Completed)
                         {
-                            collectTimer += Engine.DeltaTime;
-                            if (collectTimer > 0.15f) OnCollect();
+                            _collectTimer += Engine.DeltaTime;
+                            if (_collectTimer > 0.15f) OnCollect();
                         }
-                        else collectTimer = Math.Min(collectTimer, 0f);
+                        else _collectTimer = Math.Min(_collectTimer, 0f);
                     }
                 }
-                else if (followIndex > 0) collectTimer = -0.15f;
+                else if (followIndex > 0) _collectTimer = -0.15f;
             }
             base.Update();
             if (Follower.Leader != null && base.Scene.OnInterval(0.08f))
             {
-                ParticleType type = (isGhostBerry ? P_GhostGlow : P_Glow );
+                ParticleType type = (_isGhostBerry ? P_GhostGlow : P_Glow );
                 SceneAs<Level>().ParticlesFG.Emit(type, Position + Calc.Random.Range(-Vector2.One * 6f, Vector2.One * 6f));
             }
         }
 
         private void OnAnimate(string id)
         {
-            if (sprite.CurrentAnimationFrame == 30)
+            if (_sprite.CurrentAnimationFrame == 30)
             {
-                lightTween.Start();
-                if (!collected && (CollideCheck<FakeWall>() || CollideCheck<Solid>()))
+                _lightTween.Start();
+                if (!_collected && (CollideCheck<FakeWall>() || CollideCheck<Solid>()))
                 {
                     Audio.Play("event:/game/general/strawberry_pulse", Position);
                     SceneAs<Level>().Displacement.AddBurst(Position, 0.6f, 4f, 28f, 0.1f);
@@ -118,20 +124,20 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
         public void OnPlayer(Player player)
         {
             ((Level)base.Scene).Session.GrabbedGolden = true;
-            if (Follower.Leader != null || collected) return;
+            if (Follower.Leader != null || _collected) return;
             ReturnHomeWhenLost = true;
-            Audio.Play(isGhostBerry ? "event:/game/general/strawberry_blue_touch" : "event:/game/general/strawberry_touch", Position);
+            Audio.Play(_isGhostBerry ? "event:/game/general/strawberry_blue_touch" : "event:/game/general/strawberry_touch", Position);
             player.Leader.GainFollower(Follower);
-            wiggler.Start();
+            _wiggler.Start();
             base.Depth = -1000000;
         }
 
         public void OnCollect()
         {
-            if (!collected)
+            if (!_collected)
             {
                 int collectIndex = 0;
-                collected = true;
+                _collected = true;
                 if (Follower.Leader != null)
                 {
                     Player obj = Follower.Leader.Entity as Player;
@@ -151,14 +157,14 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
 
         private void OnLoseLeader()
         {
-            if (collected || !ReturnHomeWhenLost) return;
+            if (_collected || !ReturnHomeWhenLost) return;
             Alarm.Set(this, 0.15f, delegate
             {
-                Vector2 vector = (start - Position).SafeNormalize();
-                float num = Vector2.Distance(Position, start);
+                Vector2 vector = (_start - Position).SafeNormalize();
+                float num = Vector2.Distance(Position, _start);
                 float num2 = Calc.ClampedMap(num, 16f, 120f, 16f, 96f);
-                Vector2 control = start + vector * 16f + vector.Perpendicular() * num2 * Calc.Random.Choose(1, -1);
-                SimpleCurve curve = new SimpleCurve(Position, start, control);
+                Vector2 control = _start + vector * 16f + vector.Perpendicular() * num2 * Calc.Random.Choose(1, -1);
+                SimpleCurve curve = new SimpleCurve(Position, _start, control);
                 Tween tween = Tween.Create(Tween.TweenMode.Oneshot, Ease.SineOut, MathHelper.Max(num / 100f, 0.4f), start: true);
                 tween.OnUpdate = delegate (Tween f)
                 {
@@ -178,13 +184,14 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
             Tag = Tags.TransitionUpdate;
             Depth = -2000010;
             int num = 2;
-            if (isGhostBerry) num = 1;
+            if (_isGhostBerry) num = 1;
             Audio.Play("event:/game/general/strawberry_get", Position, "colour", num, "count", collectIndex);
             Input.Rumble(RumbleStrength.Medium, RumbleLength.Medium);
-            if (num == 1) sprite.Play("collectGhost");
-            else sprite.Play("collectPlat");
-            while (sprite.Animating) yield return null;
-            Scene.Add(new StrawberryPoints(Position, isGhostBerry, collectIndex, false));
+            _sprite.Play("collect");
+            //if (num == 1) sprite.Play("collectGhost");
+            //else sprite.Play("collectPlat");
+            while (_sprite.Animating) yield return null;
+            Scene.Add(new StrawberryPoints(Position, _isGhostBerry, collectIndex, false));
             RemoveSelf();
         }
     }

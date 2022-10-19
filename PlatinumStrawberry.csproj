@@ -373,7 +373,10 @@
     <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\objects\platinumblock\icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Graphics\SyrenyxPlatinumStrawberry\PlatinumBerry.xml">
+    <None Update="Graphics\ColorGrading\platinum.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\SyrenyxPlatinumStrawberry\Sprites.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Loenn\entities\HiddenStrawberry.lua">
