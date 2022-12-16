@@ -47,7 +47,7 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
             Collidable = false;
             _renderLerp = 1f;
             bool platFollower = false;
-            foreach (PlatinumStrawberry item in scene.Entities.FindAll<PlatinumStrawberry>())
+            foreach (PlatinumBerry item in scene.Entities.FindAll<PlatinumBerry>())
             {
                 if (item.Follower.Leader != null)
                 {

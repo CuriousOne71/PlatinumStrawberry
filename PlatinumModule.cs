@@ -1,14 +1,5 @@
-﻿using Celeste.Mod.UI;
-using FMOD.Studio;
-using Microsoft.Xna.Framework;
-using Monocle;
-using Celeste;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using Celeste.Mod.PlatinumStrawberry.Settings;
 
 namespace Celeste.Mod.PlatinumStrawberry
 {
@@ -18,23 +9,20 @@ namespace Celeste.Mod.PlatinumStrawberry
 
         public PlatinumModule()
         {
-            if (_instance == null)
-            {
-                _instance = this;
-            }
+            if (_instance == null) _instance = this;
         }
 
         public static PlatinumModule Instance 
         {
             get 
             {
-                if (_instance == null)
-                {
-                    _instance = new PlatinumModule();
-                }
+                if (_instance == null) _instance = new PlatinumModule();
                 return _instance;
             }
         }
+
+        public override Type SettingsType => typeof(PlatinumSettings);
+        public PlatinumSettings Settings => _Settings as PlatinumSettings;
 
         public override void Load()
         {

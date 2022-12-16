@@ -31,6 +31,12 @@
       <HintPath>libs\MMHOOK_Celeste.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>libs\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>libs\MonoMod.Utils.dll</HintPath>
+    </Reference>
     <Reference Include="YamlDotNet">
       <HintPath>libs\YamlDotNet.dll</HintPath>
       <Private>False</Private>
@@ -40,6 +46,12 @@
   <ItemGroup>
     <Folder Include="Ahorn\" />
     <Folder Include="Dialog\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="PlatinumSettings.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

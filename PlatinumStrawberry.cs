@@ -5,14 +5,14 @@ using Microsoft.Xna.Framework;
 using Monocle;
 using System;
 using System.Collections;
-using System.Reflection;
+using Celeste.Mod.PlatinumStrawberry.Settings;
 
 namespace Celeste.Mod.PlatinumStrawberry.Entities
 {
     [CustomEntity("PlatinumStrawberry/PlatinumStrawberry")]
     [RegisterStrawberry(false, true)]
     [TrackedAs(typeof(Strawberry))]
-    class PlatinumStrawberry : Entity, IStrawberry
+    class PlatinumBerry : Entity, IStrawberry
     {
         public EntityID ID;
         public bool Golden = true;
@@ -32,10 +32,11 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
         private float _collectTimer = 0f;
         private bool _collected;
         private bool _isGhostBerry;
+        private bool _commandSpawned;
 
         private Strawberry strawberry;
 
-        public PlatinumStrawberry(EntityData data, Vector2 offset, EntityID gid)
+        public PlatinumBerry(EntityData data, Vector2 offset, EntityID gid)
         {
             strawberry = new Strawberry(data, offset, gid);
             ID = gid;
@@ -98,8 +99,15 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
             base.Update();
             if (Follower.Leader != null && base.Scene.OnInterval(0.08f))
             {
-                ParticleType type = (_isGhostBerry ? P_GhostGlow : P_Glow );
+                ParticleType type = (_isGhostBerry ? P_GhostGlow : P_Glow);
                 SceneAs<Level>().ParticlesFG.Emit(type, Position + Calc.Random.Range(-Vector2.One * 6f, Vector2.One * 6f));
+            }
+            foreach (Player player in Scene.Entities.FindAll<Player>())
+            {
+                if (player.Dead && !_commandSpawned && PlatinumModule.Instance.Settings.ResetToStartWithPlat)
+                {
+                    Add(new Coroutine(DeathRoutine()));
+                }
             }
         }
 
@@ -146,10 +154,13 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
                     obj.StrawberryCollectResetTimer = 2.5f;
                     Follower.Leader.LoseFollower(Follower);
                 }
-                SaveData.Instance.AddStrawberry(ID, Golden);
                 Session session = ((Level)base.Scene).Session;
-                session.DoNotLoad.Add(ID);
-                session.Strawberries.Add(ID);
+                if (!_commandSpawned)
+                {
+                    SaveData.Instance.AddStrawberry(ID, Golden);
+                    session.DoNotLoad.Add(ID);
+                    session.Strawberries.Add(ID);
+                }
                 session.UpdateLevelStartDashes();
                 Add(new Coroutine(CollectRoutine(collectIndex)));
             }
@@ -185,14 +196,45 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
             Depth = -2000010;
             int num = 2;
             if (_isGhostBerry) num = 1;
-            Audio.Play("event:/game/general/strawberry_get", Position, "colour", num, "count", collectIndex);
-            Input.Rumble(RumbleStrength.Medium, RumbleLength.Medium);
+            Audio.Play("event:/game/general/strawberry_get", Position, "colour", num, "count", 10);
+            Input.Rumble(RumbleStrength.Strong, RumbleLength.Medium);
             _sprite.Play("collect");
             //if (num == 1) sprite.Play("collectGhost");
             //else sprite.Play("collectPlat");
             while (_sprite.Animating) yield return null;
             Scene.Add(new StrawberryPoints(Position, _isGhostBerry, collectIndex, false));
             RemoveSelf();
+        }
+
+        private IEnumerator DeathRoutine()
+        {
+            Audio.Play("event:/new_content/char/madeline/death_golden");
+            Level level = Engine.Scene as Level;
+            Session session = level.Session;
+            yield return 1.5f;
+            Engine.Scene = new LevelExit(LevelExit.Mode.GoldenBerryRestart, session)
+            {
+                GoldenStrawberryEntryLevel = ID.Level
+            };
+        }
+
+        [Command("give_plat", "gives you a platinum strawberry")]
+        private static void cmdGivePlat()
+        {
+            if (Engine.Scene is Level level)
+            {
+                Player player = level.Tracker.GetEntity<Player>();
+                if (player != null)
+                {
+                    EntityData entityData = new EntityData();
+                    entityData.Position = player.Position + new Vector2(0f, -16f);
+                    entityData.ID = Calc.Random.Next();
+                    entityData.Name = "PlatinumStrawberry/PlatinumStrawberry";
+                    PlatinumBerry platBerry = new PlatinumBerry(entityData, Vector2.Zero, new EntityID(level.Session.Level, entityData.ID));
+                    platBerry._commandSpawned = true;
+                    level.Add(platBerry);
+                }
+            }
         }
     }
 }

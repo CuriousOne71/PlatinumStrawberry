@@ -11,3 +11,10 @@ triggers.PlatinumStrawberry/PlatBerryCollectTrigger.placements.name.default=Plat
 
 # Platinum Block
 entities.PlatinumStrawberry/PlatinumBlock.placements.name.default=Platinum Block
+
+# Platinum Badeline Boost
+entities.PlatinumStrawberry/PlatinumBadelineBoost.placements.name.default=Platinum Badeline Boost
+
+# Settings
+modoptions_platinumstrawberry_resettostartwithplat= Default Platium Strawberry Death Behavior
+modoptions_platinumstrawberry_resettostartwithplat_description= Makes you respawn at the beginning of the chapter if you die with a Platinum Strawberry.
