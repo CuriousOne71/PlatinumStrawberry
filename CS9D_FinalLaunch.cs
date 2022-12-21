@@ -20,8 +20,8 @@ namespace Celeste.Mod.PlatinumStrawberry.Cutscenes
         private Vector2 cameraOffset;
         private float fadeToWhite;
         private float timer;
-        private bool hasGolden;
-        private bool hasPlatinum;
+        private bool hasGolden = false;
+        private bool hasPlatinum = false;
 
         public CS9D_FinalLaunch(Player player, PlatinumBadelineBoost boost) : base(fadeInOnSkip: false)
         {
@@ -139,8 +139,8 @@ namespace Celeste.Mod.PlatinumStrawberry.Cutscenes
                 if (hasGolden || hasPlatinum)
                 {
                     if (Level.Wipe != null) Level.Wipe.Cancel();
-                    if (hasGolden) Level.SnapColorGrade("golden");
-                    else Level.SnapColorGrade("platinum");
+                    if (hasPlatinum) Level.SnapColorGrade("platinum");
+                    else Level.SnapColorGrade("golden");
                     new FadeWipe(level, wipeIn: true).Duration = 2f;
                     ScreenWipe.WipeColor = Color.White;
                 }

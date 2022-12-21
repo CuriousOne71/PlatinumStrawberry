@@ -394,6 +394,9 @@
     <None Update="Loenn\entities\HiddenStrawberry.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Loenn\entities\PlatinumBadelineBoost.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Loenn\entities\PlatinumBlock.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

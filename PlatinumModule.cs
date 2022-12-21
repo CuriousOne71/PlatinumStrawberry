@@ -1,4 +1,5 @@
 ﻿using System;
+using Celeste.Mod.PlatinumStrawberry.Hooks;
 using Celeste.Mod.PlatinumStrawberry.Settings;
 
 namespace Celeste.Mod.PlatinumStrawberry
@@ -26,10 +27,12 @@ namespace Celeste.Mod.PlatinumStrawberry
 
         public override void Load()
         {
+            TeleportHook.Load();
         }
 
         public override void Unload()
         {
+            TeleportHook.Unload();
         }
 
         public override void Initialize()

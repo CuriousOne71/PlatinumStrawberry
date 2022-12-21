@@ -22,7 +22,7 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
         private BloomPoint _bloom;
         private Player _holding;
 
-        public PlatinumBadelineBoost(Vector2 position) : base(position)
+        public PlatinumBadelineBoost(EntityID id, Vector2 position) : base(position)
         {
             base.Depth = -1000000;
             base.Collider = new Circle(16f);
@@ -34,8 +34,9 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
             {
                 _sprite.Scale = Vector2.One * (1f + _wiggler.Value * 0.4f);
             }));
-            Add(new CameraLocker(Level.CameraLockModes.BoostSequence, 0f, 160f));
         }
+
+        public PlatinumBadelineBoost(EntityData data, Vector2 offset, EntityID id) : this(id, data.Position + offset) { }
 
         public override void Awake(Scene scene)
         {

@@ -34,11 +34,8 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
         private bool _isGhostBerry;
         private bool _commandSpawned;
 
-        private Strawberry strawberry;
-
         public PlatinumBerry(EntityData data, Vector2 offset, EntityID gid)
         {
-            strawberry = new Strawberry(data, offset, gid);
             ID = gid;
             Position = (_start = data.Position + offset);
             _isGhostBerry = SaveData.Instance.CheckStrawberry(ID);
