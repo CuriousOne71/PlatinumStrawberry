@@ -15,8 +15,10 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
     class PlatinumBerry : Entity, IStrawberry
     {
         public EntityID ID;
+        public bool Collected;
         public bool Golden = true;
         public bool ReturnHomeWhenLost = true;
+        public bool Dead = false;
         public static ParticleType P_Glow = Strawberry.P_Glow;
         public static ParticleType P_GhostGlow = Strawberry.P_GhostGlow;
         public Follower Follower;
@@ -30,7 +32,6 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
         private Vector2 _start;
         private float _wobble = 0f;
         private float _collectTimer = 0f;
-        private bool _collected;
         private bool _isGhostBerry;
         private bool _commandSpawned;
 
@@ -70,7 +71,7 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
 
         public override void Update()
         {
-            if (!_collected)
+            if (!Collected)
             {
                 _wobble += Engine.DeltaTime * 4f;
                 Sprite obj = _sprite;
@@ -99,13 +100,6 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
                 ParticleType type = (_isGhostBerry ? P_GhostGlow : P_Glow);
                 SceneAs<Level>().ParticlesFG.Emit(type, Position + Calc.Random.Range(-Vector2.One * 6f, Vector2.One * 6f));
             }
-            foreach (Player player in Scene.Entities.FindAll<Player>())
-            {
-                if (player.Dead && !_commandSpawned && PlatinumModule.Instance.Settings.ResetToStartWithPlat)
-                {
-                    Add(new Coroutine(DeathRoutine()));
-                }
-            }
         }
 
         private void OnAnimate(string id)
@@ -113,7 +107,7 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
             if (_sprite.CurrentAnimationFrame == 30)
             {
                 _lightTween.Start();
-                if (!_collected && (CollideCheck<FakeWall>() || CollideCheck<Solid>()))
+                if (!Collected && (CollideCheck<FakeWall>() || CollideCheck<Solid>()))
                 {
                     Audio.Play("event:/game/general/strawberry_pulse", Position);
                     SceneAs<Level>().Displacement.AddBurst(Position, 0.6f, 4f, 28f, 0.1f);
@@ -129,7 +123,7 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
         public void OnPlayer(Player player)
         {
             ((Level)base.Scene).Session.GrabbedGolden = true;
-            if (Follower.Leader != null || _collected) return;
+            if (Follower.Leader != null || Collected) return;
             ReturnHomeWhenLost = true;
             Audio.Play(_isGhostBerry ? "event:/game/general/strawberry_blue_touch" : "event:/game/general/strawberry_touch", Position);
             player.Leader.GainFollower(Follower);
@@ -139,10 +133,10 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
 
         public void OnCollect()
         {
-            if (!_collected)
+            if (!Collected)
             {
                 int collectIndex = 0;
-                _collected = true;
+                Collected = true;
                 if (Follower.Leader != null)
                 {
                     Player obj = Follower.Leader.Entity as Player;
@@ -165,7 +159,15 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
 
         private void OnLoseLeader()
         {
-            if (_collected || !ReturnHomeWhenLost) return;
+            foreach (Player player in Scene.Entities.FindAll<Player>())
+            {
+                if (player.Dead && !_commandSpawned && PlatinumModule.Instance.Settings.DefaultPlatinumBerryRespawnBehavior)
+                {
+                    Audio.Play("event:/new_content/char/madeline/death_golden");
+                    Dead = true;
+                }
+            }
+            if (Collected || !ReturnHomeWhenLost) return;
             Alarm.Set(this, 0.15f, delegate
             {
                 Vector2 vector = (_start - Position).SafeNormalize();
@@ -199,20 +201,8 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
             //if (num == 1) sprite.Play("collectGhost");
             //else sprite.Play("collectPlat");
             while (_sprite.Animating) yield return null;
-            Scene.Add(new StrawberryPoints(Position, _isGhostBerry, collectIndex, false));
+            Scene.Add(new PlatberryPoints(Position, _isGhostBerry));
             RemoveSelf();
-        }
-
-        private IEnumerator DeathRoutine()
-        {
-            Audio.Play("event:/new_content/char/madeline/death_golden");
-            Level level = Engine.Scene as Level;
-            Session session = level.Session;
-            yield return 1.5f;
-            Engine.Scene = new LevelExit(LevelExit.Mode.GoldenBerryRestart, session)
-            {
-                GoldenStrawberryEntryLevel = ID.Level
-            };
         }
 
         [Command("give_plat", "gives you a platinum strawberry")]

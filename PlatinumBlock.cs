@@ -9,6 +9,8 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
     [Tracked(false)]
     class PlatinumBlock : Solid
     {
+        private float _width;
+        private float _height;
         private float _startY;
         private float _yLerp;
         private float _sinkTimer;
@@ -18,11 +20,14 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
 
         public PlatinumBlock(Vector2 position, float width, float height) : base(position, width, height, safe: false)
         {
+            _width = width;
+            _height = height;
             _startY = base.Y;
-            _berry = new Image(GFX.Game["SyrenyxPlatinumStrawberry/objects/platinumblock/icon"]);
+
+            _berry = new Image(GFX.Game["collectables/goldberry/idle00"]);
             _berry.CenterOrigin();
-            _berry.Position = new Vector2(width / 2f, height / 2f);
-            MTexture mTexture = GFX.Game["SyrenyxPlatinumStrawberry/objects/platinumblock/block"];
+            _berry.Position = new Vector2(_width / 2f, _height / 2f);
+            MTexture mTexture = GFX.Game["objects/goldblock"];
             _nineSlice = new MTexture[3, 3];
             for (int i = 0; i < 3; i++)
             {
@@ -46,7 +51,16 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
             Visible = false;
             Collidable = false;
             _renderLerp = 1f;
+            bool goldFollower = false;
             bool platFollower = false;
+            foreach (Strawberry item in scene.Entities.FindAll<Strawberry>())
+            {
+                if (item.Golden && item.Follower.Leader != null)
+                {
+                    goldFollower = true;
+                    break;
+                }
+            }
             foreach (PlatinumBerry item in scene.Entities.FindAll<PlatinumBerry>())
             {
                 if (item.Follower.Leader != null)
@@ -55,11 +69,27 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
                     break;
                 }
             }
-            if (!platFollower)
+            if (platFollower)
+            {
+                _berry = new Image(GFX.Game["SyrenyxPlatinumStrawberry/objects/platinumblock/icon"]);
+                _berry.CenterOrigin();
+                _berry.Position = new Vector2(_width / 2f, _height / 2f);
+                MTexture mTexture = GFX.Game["SyrenyxPlatinumStrawberry/objects/platinumblock/block"];
+                _nineSlice = new MTexture[3, 3];
+                for (int i = 0; i < 3; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        _nineSlice[i, j] = mTexture.GetSubtexture(new Rectangle(i * 8, j * 8, 8, 8));
+                    }
+                }
+            }
+            else if (!goldFollower)
             {
                 DestroyStaticMovers();
                 RemoveSelf();
             }
+            
         }
 
         public override void Update()

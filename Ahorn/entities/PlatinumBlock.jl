@@ -5,7 +5,7 @@ using ..Ahorn, Maple
 @mapdef Entity "PlatinumStrawberry/PlatinumBlock" PlatinumBlock(x::Integer, y::Integer, width::Integer=Maple.defaultBlockWidth, height::Integer=Maple.defaultBlockHeight)
 
 const placements = Ahorn.PlacementDict(
-    "Silver Block (Collab Utils 2)" => Ahorn.EntityPlacement(
+    "Platinum Block" => Ahorn.EntityPlacement(
         PlatinumBlock,
         "rectangle"
     ),

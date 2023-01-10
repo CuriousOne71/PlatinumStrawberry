@@ -27,11 +27,13 @@ namespace Celeste.Mod.PlatinumStrawberry
 
         public override void Load()
         {
+            ScreenWipeHook.Load();
             TeleportHook.Load();
         }
 
         public override void Unload()
         {
+            ScreenWipeHook.Unload();
             TeleportHook.Unload();
         }
 

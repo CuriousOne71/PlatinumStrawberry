@@ -2,6 +2,6 @@
 {
     public class PlatinumSettings : EverestModuleSettings
     {
-        public bool ResetToStartWithPlat { get; set; } = true;
+        public bool DefaultPlatinumBerryRespawnBehavior { get; set; } = true;
     }
 }

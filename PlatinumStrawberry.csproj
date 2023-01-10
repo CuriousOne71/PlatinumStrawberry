@@ -33,9 +33,11 @@
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>libs\Mono.Cecil.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="MonoMod.Utils">
       <HintPath>libs\MonoMod.Utils.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="YamlDotNet">
       <HintPath>libs\YamlDotNet.dll</HintPath>
@@ -45,20 +47,25 @@
 
   <ItemGroup>
     <Folder Include="Ahorn\" />
-    <Folder Include="Dialog\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="PlatinumSettings.cs">
+    <None Update="Ahorn\entities\HiddenStrawberry.jl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
+    </None>
+    <None Update="Ahorn\entities\PlatinumBadelineBoost.jl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Ahorn\entities\PlatinumBlock.jl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Ahorn\entities\PlatinumStrawberry.jl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Ahorn\hello.jl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Dialog\english.txt">
+    <None Update="Ahorn\triggers\PlatBerryCollectTrigger.jl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="everest.yaml">

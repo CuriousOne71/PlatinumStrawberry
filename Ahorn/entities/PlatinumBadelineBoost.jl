@@ -5,7 +5,7 @@ using ..Ahorn, Maple
 @mapdef Entity "PlatinumStrawberry/PlatinumBadelineBoost" PlatinumBadelineBoost(x::Integer, y::Integer)
 
 const placements = Ahorn.PlacementDict(
-    "Platinum Strawberry" => Ahorn.EntityPlacement(
+    "Platinum Badeline Boost" => Ahorn.EntityPlacement(
         PlatinumBadelineBoost
     )
 )

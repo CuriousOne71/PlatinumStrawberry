@@ -33,12 +33,12 @@ namespace Celeste.Mod.PlatinumStrawberry.Hooks
 
             orig(self, player, nextLevel, introType, nearestSpawn);
 
-            
             player = Monocle.Engine.Scene.Tracker.GetEntity<Player>();
             player.Leader.PastPoints.Clear();
             for (int i = 0; i < storedBerries.Count; i++)
             {
                 PlatinumBerry strawberry = storedBerries[i];
+                Logger.Log("Debug", storedBerries[i].ID.Level);
                 player.Leader.GainFollower(strawberry.Follower);
                 strawberry.Position = player.Leader.Entity.Position + storedOffsets[i];
                 strawberry.RemoveTag(Tags.Global);
