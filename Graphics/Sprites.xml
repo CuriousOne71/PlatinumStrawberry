@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Sprites>
+	<platinumberry path="SyrenyxPlatinumStrawberry/collectables/platinumberry/">
+		<Center />
+		<Loop id="idlePlat" path="plat" delay=".1"  frames="0-7,0-7,0-7,8-9" />
+		<Loop id="idleGhost" path="ghost" delay=".1"  frames="0-7,0-7,0-7,0-7,8-9" />
+		<Anim id="collect" path="collect" delay=".07" frames="0-3" />
+		<Anim id="points" path="points/points" delay=".1" frames="0-7"/>
+	</platinumberry>
+</Sprites>

@@ -1,9 +1,5 @@
-﻿using Celeste;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Monocle;
-using System.Reflection;
-using System;
-using Celeste.Mod.PlatinumStrawberry.Entities;
 
 namespace Celeste.Mod.PlatinumStrawberry.Entities
 {
@@ -19,7 +15,7 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
         public PlatberryPoints(Vector2 position, bool ghostberry)
         : base(position)
         {
-            Add(_sprite = GFX.SpriteBank.Create("platberry_points"));
+            Add(_sprite = GFX.SpriteBank.Create("platinumberry"));
             Add(_light = new VertexLight(Color.White, 1f, 16, 24));
             Add(_bloom = new BloomPoint(1f, 12f));
 

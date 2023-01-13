@@ -1,11 +1,9 @@
 ﻿using Celeste.Mod.Entities;
 using Celeste.Mod.PlatinumStrawberry.Triggers;
-using Celeste;
 using Microsoft.Xna.Framework;
 using Monocle;
 using System;
 using System.Collections;
-using Celeste.Mod.PlatinumStrawberry.Settings;
 
 namespace Celeste.Mod.PlatinumStrawberry.Entities
 {
@@ -14,26 +12,26 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
     [TrackedAs(typeof(Strawberry))]
     class PlatinumBerry : Entity, IStrawberry
     {
-        public EntityID ID;
         public bool Collected;
+        public bool Dead = false;
         public bool Golden = true;
         public bool ReturnHomeWhenLost = true;
-        public bool Dead = false;
+        public EntityID ID;
+        public Follower Follower;
         public static ParticleType P_Glow = Strawberry.P_Glow;
         public static ParticleType P_GhostGlow = Strawberry.P_GhostGlow;
-        public Follower Follower;
 
+        private float _wobble = 0f;
+        private float _collectTimer = 0f;
+        private bool _isGhostBerry;
+        private bool _commandSpawned;
+        private Vector2 _start;
         private Sprite _sprite;
         private Wiggler _wiggler;
         private Wiggler _rotateWiggler;
         private BloomPoint _bloom;
         private VertexLight _light;
         private Tween _lightTween;
-        private Vector2 _start;
-        private float _wobble = 0f;
-        private float _collectTimer = 0f;
-        private bool _isGhostBerry;
-        private bool _commandSpawned;
 
         public PlatinumBerry(EntityData data, Vector2 offset, EntityID gid)
         {
@@ -46,7 +44,7 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
             Add(new MirrorReflection());
             Add(Follower = new Follower(ID, null, OnLoseLeader));
             Follower.FollowDelay = 0.3f;
-            _sprite = GFX.SpriteBank.Create("moonberry");
+            _sprite = GFX.SpriteBank.Create("platinumberry");
             _wiggler = Wiggler.Create(0.4f, 4f, delegate (float v) { _sprite.Scale = Vector2.One * (1f + v * 0.35f); });
             _rotateWiggler = Wiggler.Create(0.5f, 4f, delegate (float v) { _sprite.Rotation = v * 30f * ((float)Math.PI / 180f); });
             _bloom = new BloomPoint(0.5f, 12f);
@@ -58,9 +56,8 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
         {
             base.Added(scene);
             Add(_sprite);
-            _sprite.Play("idle");
-            //if (!isGhostBerry) sprite.Play("idlePlat");
-            //else sprite.Play("idleGhost");
+            if (!_isGhostBerry) _sprite.Play("idlePlat");
+            else _sprite.Play("idleGhost");
             _sprite.OnFrameChange = OnAnimate;
             Add(_wiggler);
             Add(_rotateWiggler);
@@ -161,10 +158,10 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
         {
             foreach (Player player in Scene.Entities.FindAll<Player>())
             {
-                if (player.Dead && !_commandSpawned && PlatinumModule.Instance.Settings.DefaultPlatinumBerryRespawnBehavior)
+                if (player.Dead)
                 {
                     Audio.Play("event:/new_content/char/madeline/death_golden");
-                    Dead = true;
+                    if (!_commandSpawned && PlatinumModule.Instance.Settings.DefaultPlatinumBerryRespawnBehavior) Dead = true;
                 }
             }
             if (Collected || !ReturnHomeWhenLost) return;
@@ -198,8 +195,6 @@ namespace Celeste.Mod.PlatinumStrawberry.Entities
             Audio.Play("event:/game/general/strawberry_get", Position, "colour", num, "count", 10);
             Input.Rumble(RumbleStrength.Strong, RumbleLength.Medium);
             _sprite.Play("collect");
-            //if (num == 1) sprite.Play("collectGhost");
-            //else sprite.Play("collectPlat");
             while (_sprite.Animating) yield return null;
             Scene.Add(new PlatberryPoints(Position, _isGhostBerry));
             RemoveSelf();

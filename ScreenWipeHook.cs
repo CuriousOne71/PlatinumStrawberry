@@ -1,7 +1,5 @@
 ﻿using Celeste.Mod.PlatinumStrawberry.Entities;
 using Monocle;
-using System;
-using static Celeste.Player;
 
 namespace Celeste.Mod.PlatinumStrawberry.Hooks
 {
@@ -14,7 +12,7 @@ namespace Celeste.Mod.PlatinumStrawberry.Hooks
         private static void platinumRestartCheck(On.Celeste.ScreenWipe.orig_Update orig, ScreenWipe self, Scene scene)
         {
             orig(self, scene);
-            if (scene.Entities.FindFirst<PlatinumBerry>() != null)
+            if (scene.Entities.FindFirst<PlatinumBerry>() != null && PlatinumModule.Instance.Settings.DefaultPlatinumBerryRespawnBehavior)
             {
                 void platinumRestart(PlatinumBerry plat)
                 {

@@ -386,6 +386,30 @@
     <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\normal51.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\points\points00.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\points\points01.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\points\points02.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\points\points03.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\points\points04.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\points\points05.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\points\points06.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\collectables\platinumberry\points\points07.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Graphics\Atlases\Gameplay\SyrenyxPlatinumStrawberry\objects\platinumblock\block.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -395,7 +419,7 @@
     <None Update="Graphics\ColorGrading\platinum.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Graphics\SyrenyxPlatinumStrawberry\Sprites.xml">
+    <None Update="Graphics\Sprites.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Loenn\entities\HiddenStrawberry.lua">
